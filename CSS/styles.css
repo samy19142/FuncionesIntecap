@@ -26,4 +26,26 @@ header{
 .container-title img{
     height: 80px;
     width: 100%;
+    animation:moveImage 5s ease-in-out infinite;
+}
+
+@keyframes moveImage {
+     0%{
+        transform: rotate(25deg);
+        border-radius: 100%;
+     }
+     50%{
+        transform: rotate(-25deg);
+        border-radius: 0%;
+     }
+     75%{
+        transform: rotate(0deg);
+     }
+
+     100%{
+        transform: rotate(25deg);
+        border-radius: 100%;
+     }
+     
+    
 }
