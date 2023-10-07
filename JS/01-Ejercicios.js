@@ -179,21 +179,117 @@ const getReverseText=(texto)=> {
     return texto.split('').reverse().join('');
   }
 
+  console.log(getReverseText('Hola Mundo'));
+
 // 15) Programa que pase un arreglo de números y devuelva la suma de todos los números. Ejemplo: suma(10, 20, 30, 40, 50) = "La suma de todos los números es 150".
 const getSumaTotal=(...numeros)=> {
     const sumaTotal = numeros.reduce((acumulador, numero) => acumulador + numero, 0);
     return `La suma total es: ${sumaTotal}.`;
   }
+
+  console.log(getSumaTotal(...[10,20,30,40,50]))
 // 16) Programa que pase un arreglo de edades y devuelva la mayor y la menor. Ejemplo: edades(10, 20, 30, 40, 50) = "La edad mayor es 50 y la edad menor es 10".
 
+const getMinAndMax=(...edades)=>{
+  const min= Math.min(...edades);
+  const max= Math.max(...edades);
+
+  return `La edad Menor es: ${min} y la edad Mayor es: ${max}`
+}
+
+console.log(getMinAndMax(...[10,20,30,40,50,]))
+
 // 17) programa de escala de notas de 0 a 10. Ejemplo: 0-5 = "Pésimo", 6-7 = "Regular", 8-9 = "Bueno", 10 = "Excelente".
+const getNotes =(nota=0)=>{
+  if(nota>=0 && nota<=5){
+    return "Pesimo"
+  }
+  if(nota>=6 && nota<=7){
+    return "Regular"
+  }
+  if(nota>=8 && nota<=9){
+    return "Bueno"
+  }
+  if(nota>=10){
+    return "Excelente"
+  }
+}
+
+console.log(getNotes(5))
 
 // 18) programa que devuelva el número de cifras de un número entero. Ejemplo: 1234 = 4 cifras.
-
+const quantity =(number=0)=>{
+  if (number===0) {
+    return "Debe Ingresar un número mayor a cero"
+  }
+  return number.toString().length;
+}
+console.log(quantity(1234))
 
 // 19) programa que muestre los numeros primos de 1 a 1000.
+function esPrimo(numero) {
+  if (numero <= 1) {
+    return false;
+  }
+  if (numero <= 3) {
+    return true;
+  }
+  if (numero % 2 === 0 || numero % 3 === 0) {
+    return false;
+  }
+  let i = 5;
+  while (i * i <= numero) {
+    if (numero % i === 0 || numero % (i + 2) === 0) {
+      return false;
+    }
+    i += 6;
+  }
+  return true;
+}
+
+function mostrarNumerosPrimos() {
+  for (let numero = 1; numero <= 1000; numero++) {
+    if (esPrimo(numero)) {
+      console.log(numero);
+    }
+  }
+}
+
+console.log(mostrarNumerosPrimos())
+
+
+
 
 // 20) Programa que realice el juego de piedra, papel o tijera. Ejemplo: "Piedra" > "Tijera", "Tijera" > "Papel", "Papel" > "Piedra".
 
+const Game ={
+  piedra: {
+    piedra:'Empate',
+    papel:'Gana Papel',
+    tijera:'Gana Piedra'
+  },
+  papel: {
+    piedra:'Gana Papel',
+    papel:'Empate',
+    tijera:'Gana Tijera'
+  },
+  tijera: {
+    piedra:'Gana Piedra',
+    papel:'Gana Tijera',
+    tijera:'Empate'
+  },
+
+}
+const opciones={
+PIEDRA:'piedra',
+PAPEL:'papel',
+TIJERA:'tijera'}
+
+console.log(Game[opciones.PAPEL][opciones.PIEDRA]);
+
 // //Resultado: juegoPiedraPapelTijera("piedra", "papel") = "Gana papel".
+
 // 21) Programa con temporizador que muestre un mensaje cada cierto tiempo. Ejemplo: "Hola Mundo" cada 3 segundos.
+const showMessage=()=> setInterval(()=>{console.log('Hola Mundo')},3000);
+
+console.log(showMessage())
