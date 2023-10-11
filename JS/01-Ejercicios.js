@@ -293,3 +293,4 @@ console.log(Game[opciones.PAPEL][opciones.PIEDRA]);
 const showMessage=()=> setInterval(()=>{console.log('Hola Mundo')},3000);
 
 console.log(showMessage())
+
