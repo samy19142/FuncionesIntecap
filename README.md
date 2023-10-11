@@ -46,3 +46,6 @@ Intecap- tarea1
 
 // //Resultado: juegoPiedraPapelTijera("piedra", "papel") = "Gana papel".
 // 21) Programa con temporizador que muestre un mensaje cada cierto tiempo. Ejemplo: "Hola Mundo" cada 3 segundos.
+
+
+// Agregamos una nueva vista llamada luz que muestra una bombilla , utilizamos 2 botones para encender y apagar por medio de javascript 💡
