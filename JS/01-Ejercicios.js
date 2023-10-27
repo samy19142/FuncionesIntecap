@@ -33,7 +33,7 @@ const getAge = (fechaNacimiento) => {
 console.log(getAge(new Date("1995/11/12")));
 
 // 6) Programa que convierte decimal a romano hasta el número 1000.  mifuncion(15)  devolver:  el 15 es XV
-const getRomanNumer = (numero = 1) => {
+export const getRomanNumer = (numero = 1) => {
   if ((numero, 1 | (numero > 1000))) {
     console.log("el numero debe ser menor a mil");
     return "Número fuera de rango";

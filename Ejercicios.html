@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Funciones JavaScript</title>
+  </head>
+  <body>
+    <h1>Funciones JavaScript</h1>
+
+    <!-- Formulario para contar caracteres -->
+    <form>
+      <label for="cadenaContar">Introduce una cadena de texto:</label>
+      <input type="text" id="cadenaContar" placeholder="Ejemplo: Hola Mundo" />
+      <button id="countCharactersBtn">Contar Caracteres</button>
+      <p id="characterCountResult"></p>
+    </form>
+
+    <!-- Formulario para recortar texto -->
+    <form>
+      <label for="cadenaRecortar">Introduce una cadena de texto:</label>
+      <input
+        type="text"
+        id="cadenaRecortar"
+        placeholder="Ejemplo: Hola Mundo"
+      />
+      <label for="cantidadLetras">Número de letras a recortar:</label>
+      <input type="number" id="cantidadLetras" placeholder="Ejemplo: 4" />
+      <button id="cutTextBtn">Recortar Texto</button>
+      <p id="cutTextResult"></p>
+    </form>
+
+    <!-- Formulario para separar texto por un delimitador -->
+    <form>
+      <label for="cadenaSeparar">Introduce una cadena de texto:</label>
+      <input
+        type="text"
+        id="cadenaSeparar"
+        placeholder="Ejemplo: hola que tal"
+      />
+      <label for="delimitador">Introduce el delimitador:</label>
+      <input type="text" id="delimitador" placeholder="Ejemplo: " />
+      <button id="splitTextBtn">Separar Texto</button>
+      <p id="splitTextResult"></p>
+    </form>
+
+    <!-- Formulario para aplicar descuento -->
+    <form>
+      <label for="precioNormal">Precio del producto:</label>
+      <input type="number" id="precioNormal" placeholder="Ejemplo: 1000" />
+      <label for="descuento">Porcentaje de descuento:</label>
+      <input type="number" id="descuento" placeholder="Ejemplo: 20" />
+      <button id="applyDiscountBtn">Aplicar Descuento</button>
+      <p id="discountResult"></p>
+    </form>
+
+    <!-- Formulario para calcular la edad -->
+    <form>
+      <label for="fechaNacimiento">Fecha de nacimiento:</label>
+      <input type="date" id="fechaNacimiento" />
+      <button id="calculateAgeBtn">Calcular Edad</button>
+      <p id="ageResult"></p>
+    </form>
+
+    <!-- Formulario para convertir a número romano -->
+    <form>
+      <label for="numeroRomano">6) Convertir a Número Romano:</label>
+      <input type="number" id="numeroRomano" placeholder="Ejemplo: 15" />
+      <button id="convertToRomanBtn">Convertir a Número Romano</button>
+      <p id="romanNumberResult"></p>
+    </form>
+
+    <!-- Formulario para convertir a binario -->
+    <form>
+      <label for="numeroDecimal">7) Convertir a Binario:</label>
+      <input type="number" id="numeroDecimal" placeholder="Ejemplo: 1000" />
+      <button id="convertToBinaryBtn">Convertir a Binario</button>
+      <p id="binaryResult"></p>
+    </form>
+
+    <!-- Formulario para contar vocales -->
+    <form>
+      <label for="cadenaVocales">8) Contar Vocales:</label>
+      <input type="text" id="cadenaVocales" placeholder="Ejemplo: Hola Mundo" />
+      <button id="countVowelsBtn">Contar Vocales</button>
+      <p id="vowelCountResult"></p>
+    </form>
+
+    <!-- Formulario para validar palíndromo -->
+    <form>
+      <label for="palindromo">9) Validar Palíndromo:</label>
+      <input type="text" id="palindromo" placeholder="Ejemplo: Salas" />
+      <button id="checkPalindromeBtn">Validar Palíndromo</button>
+      <p id="palindromeResult"></p>
+    </form>
+
+    <!-- Formulario para eliminar espacios en blanco -->
+    <form>
+      <label for="cadenaSinEspacios">10) Eliminar Espacios en Blanco:</label>
+      <input
+        type="text"
+        id="cadenaSinEspacios"
+        placeholder="Ejemplo: Hola Mundo"
+      />
+      <button id="removeSpacesBtn">Eliminar Espacios</button>
+      <p id="spacesRemovedResult"></p>
+    </form>
+
+    <!-- Formulario para obtener iniciales en mayúscula -->
+    <form>
+      <label for="nombreCompleto">11) Obtener Iniciales en Mayúscula:</label>
+      <input
+        type="text"
+        id="nombreCompleto"
+        placeholder="Ejemplo: Yoni Escobar"
+      />
+      <button id="getInitialsBtn">Obtener Iniciales</button>
+      <p id="initialsResult"></p>
+    </form>
+
+    <!-- Formulario para contar palabras -->
+    <form>
+      <label for="textoContarPalabras">12) Contar Palabras:</label>
+      <input
+        type="text"
+        id="textoContarPalabras"
+        placeholder="Ejemplo: Samuel Armando Saravia"
+      />
+      <button id="countWordsBtn">Contar Palabras</button>
+      <p id="wordCountResult"></p>
+    </form>
+
+    <script>
+      // Función para contar caracteres
+      
+      document.getElementById("countCharactersBtn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          const cadena = document.getElementById("cadenaContar").value;
+          const characterCount = cadena.length;
+          document.getElementById(
+            "characterCountResult"
+          ).textContent = `Número de caracteres: ${characterCount}`;
+        });
+
+      // Función para recortar texto
+      document
+        .getElementById("cutTextBtn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          const cadena = document.getElementById("cadenaRecortar").value;
+          const cantidadLetras = parseInt(
+            document.getElementById("cantidadLetras").value
+          );
+          const cutText = cadena.slice(0, cantidadLetras);
+          document.getElementById(
+            "cutTextResult"
+          ).textContent = `Texto recortado: ${cutText}`;
+        });
+
+      // Función para separar texto por un delimitador
+      document
+        .getElementById("splitTextBtn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          const cadena = document.getElementById("cadenaSeparar").value;
+          const delimitador = document.getElementById("delimitador").value;
+          const splitText = cadena.split(delimitador);
+          document.getElementById(
+            "splitTextResult"
+          ).textContent = `Texto separado: ${splitText.join(", ")}`;
+        });
+
+      // Función para aplicar descuento
+      document
+        .getElementById("applyDiscountBtn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          const precioNormal = parseFloat(
+            document.getElementById("precioNormal").value
+          );
+          const descuento = parseFloat(
+            document.getElementById("descuento").value
+          );
+          const precioFinal = precioNormal - precioNormal * (descuento / 100);
+          document.getElementById(
+            "discountResult"
+          ).textContent = `Precio con descuento: $${precioFinal}`;
+        });
+
+      // Función para calcular la edad
+      document
+        .getElementById("calculateAgeBtn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          const fechaNacimiento = new Date(
+            document.getElementById("fechaNacimiento").value
+          );
+          const fechaActual = new Date();
+          const anioNacimiento = fechaNacimiento.getFullYear();
+          const anioActual = fechaActual.getFullYear();
+          const edad = anioActual - anioNacimiento;
+          document.getElementById(
+            "ageResult"
+          ).textContent = `Edad: ${edad} años`;
+        });
+      // Función para convertir a número romano
+      document
+        .getElementById("convertToRomanBtn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          const numero = parseInt(
+            document.getElementById("numeroRomano").value
+          );
+          const romanNumber = getRomanNumer(numero);
+          document.getElementById(
+            "romanNumberResult"
+          ).textContent = `El número ${numero} es ${romanNumber}`;
+        });
+
+      // Función para convertir a binario
+      document
+        .getElementById("convertToBinaryBtn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          const numero = parseInt(
+            document.getElementById("numeroDecimal").value
+          );
+          const binaryNumber = getDecimalToBinary(numero);
+          document.getElementById(
+            "binaryResult"
+          ).textContent = `El número ${numero} en binario es ${binaryNumber}`;
+        });
+
+      // Función para contar vocales
+      document
+        .getElementById("countVowelsBtn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          const cadena = document.getElementById("cadenaVocales").value;
+          const vowelCount = getCountVocal(cadena);
+          document.getElementById(
+            "vowelCountResult"
+          ).textContent = `Número de vocales: ${vowelCount}`;
+        });
+
+      // Función para validar palíndromo
+      document
+        .getElementById("checkPalindromeBtn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          const cadena = document.getElementById("palindromo").value;
+          const isPalindrome = validatePalindrome(cadena);
+          document.getElementById("palindromeResult").textContent =
+            isPalindrome;
+        });
+
+      // Función para eliminar espacios en blanco
+      document
+        .getElementById("removeSpacesBtn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          const cadena = document.getElementById("cadenaSinEspacios").value;
+          const noSpaces = deleteBlankSpaces(cadena);
+          document.getElementById(
+            "spacesRemovedResult"
+          ).textContent = `Texto sin espacios: ${noSpaces}`;
+        });
+
+      // Función para obtener iniciales en mayúscula
+      document
+        .getElementById("getInitialsBtn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          const nombreCompleto =
+            document.getElementById("nombreCompleto").value;
+          const initials = getfirtLetter(nombreCompleto);
+          document.getElementById(
+            "initialsResult"
+          ).textContent = `Iniciales en mayúscula: ${initials}`;
+        });
+
+      // Función para contar palabras
+      document
+        .getElementById("countWordsBtn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          const texto = document.getElementById("textoContarPalabras").value;
+          const wordCount = getSizeWords(texto);
+          document.getElementById(
+            "wordCountResult"
+          ).textContent = `Número de palabras: ${wordCount}`;
+        });
+    </script>
+    <script src="./JS/01-Ejercicios.js" type="module"></script>
+  </body>
+</html>
